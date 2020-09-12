@@ -1,0 +1,8 @@
+1- What is the type of a lambda expression?
+Answer: a functional interface
+		--> A functional interface is an interface with only one abstract method
+		
+2 - Can a lambda be put in a variable?
+
+
+3 - Is lambda expression an object?		
