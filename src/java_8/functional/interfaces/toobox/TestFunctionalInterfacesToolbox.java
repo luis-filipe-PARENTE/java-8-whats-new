@@ -43,7 +43,7 @@ public class TestFunctionalInterfacesToolbox {
 
   // Cat 4 - Consumer/BiConsumer/UnaryOperator (UnaryOperator is a special case )
   static void consumeMyObject() {
-    Consumer<MyObject> consumer = (MyObject obj) -> {
+    Consumer<MyObject> consumer = (obj) -> {
 
       obj.setName(obj.getName() + " after process!");
       System.out.println(obj.getName());
@@ -59,7 +59,19 @@ public class TestFunctionalInterfacesToolbox {
     consumer.accept(obj1);
 
 
-    BiConsumer<MyObject, MyObject> bi_consumer = (MyObject o1, MyObject o2) -> {
+    Consumer<String> complexConsumer = (String s) -> {
+      System.out.println(s);
+    };
+    complexConsumer.accept("complexConsumer");
+
+    // or more easy
+
+    Consumer<String> easyConsumer = System.out::println;
+
+    easyConsumer.accept("easyConsumer");
+
+
+    BiConsumer<MyObject, MyObject> bi_consumer = (o1, o2) -> {
       System.out.println(o1.getName() + o2.getName());
     };
 
@@ -91,7 +103,7 @@ public class TestFunctionalInterfacesToolbox {
 
   // Cat - 4 Function/BiFunction
   static void testFunctionInterface() {
-    Function<String, Integer> func = (String num) -> {
+    Function<String, Integer> func = (num) -> {
       return Integer.valueOf(num);
     };
 
@@ -105,9 +117,6 @@ public class TestFunctionalInterfacesToolbox {
     }
     return result;
   }
-
-
-
 }
 
 
