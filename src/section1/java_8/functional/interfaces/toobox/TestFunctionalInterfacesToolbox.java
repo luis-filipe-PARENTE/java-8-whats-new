@@ -1,4 +1,4 @@
-package java_8.functional.interfaces.toobox;
+package section1.java_8.functional.interfaces.toobox;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -88,6 +88,10 @@ public class TestFunctionalInterfacesToolbox {
     List<Integer> nums = List.of(2, 3, 1, 5, 6, 7, 8, 9, 12);
     nums.stream().filter(btf.and(btf1)).forEach(System.out::println); // compose
     nums.stream().filter(btf).forEach(System.out::println);
+
+    Predicate<String> i = Predicate.isEqual("asdf");
+    System.out.println(i.test("java2s.com "));
+
   }
 
 

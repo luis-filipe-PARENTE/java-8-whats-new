@@ -1,4 +1,4 @@
-package java_8.lambda.runnable;
+package section1.java_8.lambda.runnable;
 
 import java.util.Arrays;
 import java.util.Collections;

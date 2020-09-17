@@ -1,4 +1,4 @@
-package java_8.lambda.functionalinterface;
+package section1.java_8.lambda.functionalinterface;
 
 public class TestMyCustomFunctionalInterface {
 
