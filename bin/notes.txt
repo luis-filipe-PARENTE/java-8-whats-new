@@ -1,0 +1,18 @@
+1- What is the type of a lambda expression?
+Answer: a functional interface
+		--> A functional interface is an interface with only one abstract method
+		
+2 - Can a lambda be put in a variable?
+	--> Comparator<String> c = (String s1, String s1) -> Integer.compare(s1.length(), s2.length())
+
+
+3 - Is lambda expression an object?		
+	--> The answer is complex, but no
+	--> Exact answer: a lambda is an object without an identity
+	
+	
+	
+-> What is as stream:
+
+> 	
+
