@@ -28,7 +28,7 @@ public class TestMapReduceFilter {
    Stream<String> myNewStream = 
        myStream2.map(String::toUpperCase);
    
-   String str = streamSupplier.get().reduce("", (a,b) -> a + b);
+   String str = streamSupplier.get().reduce("", (a,b) -> a + " "+ b);
    System.out.println(str);
    
    String[] myNewArray =
