@@ -26,14 +26,13 @@ public class TestMapReduceFilter {
    Supplier<Stream<String>> streamSupplier = () ->  Stream.of("bob", "alice", "paul", "ellie");
    
    Stream<String> myNewStream = 
-       myStream2.map(String::toUpperCase);
+       myStream2.map(String::toUpperCase); // map return a stream so is intermediary operation. 
    
    String str = streamSupplier.get().reduce("", (a,b) -> a + " "+ b);
    System.out.println(str);
    
    String[] myNewArray =
        streamSupplier.get().filter(s -> s.length() > 4).toArray(String[]::new);
-   
    
   }
 
