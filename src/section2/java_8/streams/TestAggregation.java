@@ -17,7 +17,6 @@ public class TestAggregation {
     Supplier<Stream<Integer>> factoryStream = () -> List.of(1, 15, 2, -8, 3, 4, 5).stream();
 
     // Stream<Integer> stream = List.of(1, 2, 3, 4, 5).stream();
-
     // Note: public interface BinaryOperator<T> extends BiFunction<T,T,T> {
 
     BinaryOperator<Integer> sum = (elem1, elem2) -> elem1 + elem2;
@@ -28,8 +27,10 @@ public class TestAggregation {
 
     Optional<Integer> max = factoryStream.get().max(Comparator.naturalOrder());
     Optional<Integer> min = factoryStream.get().min(Comparator.naturalOrder());
-    max.ifPresentOrElse(System.out::println, () -> System.out.println(("Max no found!")));
-    min.ifPresentOrElse(System.out::println, () -> System.out.println(("Max no found!")));
+
+    // the message Max not found is when the list is empty
+    max.ifPresentOrElse(System.out::println, () -> System.out.println(("Max not found!")));
+    min.ifPresentOrElse(System.out::println, () -> System.out.println(("Max not found!")));
 
     Predicate<Integer> supToFour = i -> i > 4;
 
@@ -48,15 +49,12 @@ public class TestAggregation {
 
   }
 
-
   private static List<Person> getDataPerson() {
     Person p1 = new Person("Andreia Sofia");
     Person p2 = new Person("Emilia Rose");
     Person p3 = new Person("Luis-Filipe");
     return List.of(p1, p2, p3);
-
   }
-
 }
 
 
@@ -77,7 +75,5 @@ class Person {
   public void setLastName(String lastName) {
     this.lastName = lastName;
   }
-
-
 }
 

@@ -12,6 +12,7 @@ import java.util.function.BiFunction;
 import java.util.function.Function;
 import java.util.function.UnaryOperator;
 import java.util.stream.Collectors;
+import section2.java_8.streams.model.Article;
 
 // https://www.deadcoderising.com/2015-09-07-java-8-functional-composition-using-compose-and-andthen/
 
@@ -85,22 +86,19 @@ public class TestComposeAndThen {
     List<Article> list = new ArrayList<>();
     LocalDate.parse("2015-02-20");
 
-
     Article a1 = new Article("Jonh Shauber", convertStringToDate(LocalDate.of(2016, 8, 19)),
-        new HashSet<>(Arrays.asList("tag1")));
+        new HashSet<>(Arrays.asList("tag1")), 1);
     Article a1_1 = new Article("Jonh Shauber", convertStringToDate(LocalDate.of(2023, 12, 13)),
-        new HashSet<>(Arrays.asList("tag1_1")));
+        new HashSet<>(Arrays.asList("tag1_1")), 1);
     Article a2 = new Article("Ayrton Senna", convertStringToDate(LocalDate.of(2020, 3, 14)),
-        new HashSet<>(Arrays.asList("tag3")));
+        new HashSet<>(Arrays.asList("tag3")), 1);
     Article a3 = new Article("Alain Prost", convertStringToDate(LocalDate.of(2018, 1, 28)),
-        new HashSet<>(Arrays.asList("tag6")));
+        new HashSet<>(Arrays.asList("tag6")), 1);
     Article a4 = new Article("Cris Marquez", convertStringToDate(LocalDate.of(2022, 8, 8)),
-        new HashSet<>(Arrays.asList("tag7")));
-
+        new HashSet<>(Arrays.asList("tag7")), 1);
 
     list.addAll(Arrays.asList(a1, a2, a3, a4, a1_1));
     return list;
-
   }
 
   private static Date convertStringToDate(LocalDate localdate) {
